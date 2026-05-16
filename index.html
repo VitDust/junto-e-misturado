@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Junto e Misturado Restaurante</title>
+
+  <meta
+    name="description"
+    content="Comida caseira feita no capricho todos os dias em Curitiba. Marmitas e refeições servidas na hora no bairro Lindóia.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f2d1f;
+      color:#f5f5f5;
+      line-height:1.7;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:90%;
+      max-width:1100px;
+      margin:auto;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:60px 20px;
+      background:
+      linear-gradient(rgba(7,20,14,0.88), rgba(7,20,14,0.88)),
+      url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero-content{
+      max-width:750px;
+    }
+
+    .logo{
+      width:180px;
+      height:180px;
+      object-fit: cover;
+      margin:0 auto 30px;
+      border-radius:50%;
+      box-shadow:0 0 30px rgba(0,0,0,0.35);
+      border: 3px solid #f5a623;
+    }
+
+    .hero h1{
+      font-size:3rem;
+      margin-bottom:18px;
+      color:#f5a623;
+      font-weight:700;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      color:#e7e7e7;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#f5a623;
+      color:#102317;
+      padding:15px 32px;
+      border-radius:40px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      background:#ffb84c;
+    }
+
+    /* SEÇÕES */
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      font-size:2.3rem;
+      color:#f5a623;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#d9d9d9;
+    }
+
+    /* SOBRE */
+
+    .sobre{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .sobre img{
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .sobre-texto p{
+      margin-bottom:18px;
+      color:#ececec;
+    }
+
+    /* INFO BOXES */
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:25px;
+      margin-top:20px;
+    }
+
+    .info-box{
+      background:#163827;
+      padding:30px;
+      border-radius:18px;
+      border:1px solid rgba(245,166,35,0.18);
+    }
+
+    .info-box h3{
+      color:#f5a623;
+      margin-bottom:15px;
+      font-size:1.3rem;
+    }
+
+    .info-box p{
+      color:#ececec;
+    }
+
+    /* FEIJOADA */
+
+    .feijoada{
+      background:#132d20;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.08);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .feijoada h2{
+      color:#f5a623;
+      margin-bottom:15px;
+      font-size:2.4rem;
+    }
+
+    .feijoada p{
+      max-width:700px;
+      margin:auto;
+      color:#f1f1f1;
+      font-size:1.1rem;
+    }
+
+    /* CONTATO */
+
+    .contato{
+      text-align:center;
+    }
+
+    .contato p{
+      margin-bottom:10px;
+      color:#f1f1f1;
+    }
+
+    .mapa{
+      margin-top:35px;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    iframe{
+      width:100%;
+      height:350px;
+      border:0;
+    }
+
+    /* BOTÃO FLUTUANTE DO WHATSAPP */
+    .btn-flutuante {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      font-weight: 600;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
+
+    .btn-flutuante:hover {
+      background: #20ba5a;
+      transform: translateY(-3px);
+    }
+
+    footer{
+      text-align:center;
+      padding:30px 20px;
+      background:#0a1a12;
+      color:#bbbbbb;
+      font-size:0.95rem;
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:850px){
+
+      .sobre{
+        grid-template-columns:1fr;
+      }
+
+      .sobre img {
+        height: 300px;
+      }
+
+      .hero h1{
+        font-size:2.3rem;
+      }
+
+      .hero p{
+        font-size:1.05rem;
+      }
+
+      .logo{
+        width:150px;
+        height:150px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <img
+        src="logo.png"
+        alt="Logo Junto e Misturado"
+        class="logo">
+
+      <h1>Junto e Misturado</h1>
+
+      <p>
+        Comida caseira feita no capricho todos os dias.
+      </p>
+
+      <a
+        class="btn"
+        href="https://wa.me/5541995407927"
+        target="_blank">
+
+        Pedir pelo WhatsApp
+
+      </a>
+
+    </div>
+
+  </header>
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Sobre o Restaurante</h2>
+
+        <p>
+          Sabor tradicional e atendimento de confiança.
+        </p>
+
+      </div>
+
+      <div class="sobre">
+
+        <img 
+          src="prato.jpg" 
+          alt="Prato feito comercial clássico com arroz, feijão, bife e batata frita.">
+
+        <div class="sobre-texto">
+
+          <p>
+            O Junto e Misturado oferece comida caseira tradicional
+            preparada diariamente com cuidado e qualidade.
+          </p>
+
+          <p>
+            Trabalhamos com marmitas e refeições servidas na hora,
+            trazendo aquele sabor simples e bem feito do dia a dia.
+          </p>
+
+          <p>
+            Nosso ambiente é acolhedor, com atendimento próximo
+            e refeições feitas no capricho para nossos clientes.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Informações</h2>
+
+        <p>
+          Atendimento de segunda a sábado em Curitiba.
+        </p>
+
+      </div>
+
+      <div class="info-grid">
+
+        <div class="info-box">
+
+          <h3>Horário</h3>
+
+          <p>
+            Segunda a sábado<br>
+            Das 07h00 às 14h00
+          </p>
+
+        </div>
+
+        <div class="info-box">
+
+          <h3>Serviços</h3>
+
+          <p>
+            • Marmitas<br>
+            • Refeições no local<br>
+            • Cardápio via WhatsApp
+          </p>
+
+        </div>
+
+        <div class="info-box">
+
+          <h3>Localização</h3>
+
+          <p>
+            R. Américo Vespúcio, 365<br>
+            Lindóia — Curitiba/PR<br>
+            CEP: 81010-250
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="feijoada">
+
+    <div class="container">
+
+      <h2>Feijoada aos Sábados</h2>
+
+      <p>
+        Aos sábados servimos nossa tradicional feijoada,
+        preparada com muito sabor e aquele toque caseiro
+        que já faz parte do Junto e Misturado.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section class="contato">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Contato</h2>
+
+        <p>
+          Solicite o cardápio diretamente pelo WhatsApp.
+        </p>
+
+      </div>
+
+      <p><strong>WhatsApp:</strong> (41) 99540-7927</p>
+
+      <p>
+        Clique abaixo para falar conosco.
+      </p>
+
+      <br>
+
+      <a
+        class="btn"
+        href="https://wa.me/5541995407927"
+        target="_blank">
+
+        Abrir WhatsApp
+
+      </a>
+
+      <div class="mapa">
+
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.404554865809!2d-49.27787442371052!3d-25.49153543594246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4a2d3b23617%3A0xc3fbfb530c8859ad!2sR.%20Am%C3%A9rico%20Vesp%C3%BAcio%2C%20365%20-%20Lind%C3%B3ia%2C%20Curitiba%20-%20PR%2C%2081010-250!5e0!3m2!1spt-BR!2sbr!4v1715600000000!5m2!1spt-BR!2sbr" 
+          loading="lazy" 
+          allowfullscreen="">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <a href="https://wa.me/5541995407927" class="btn-flutuante" target="_blank">
+    Pedir no WhatsApp
+  </a>
+
+  <footer>
+
+    © 2026 Junto e Misturado Restaurante —
+    Curitiba/PR
+
+  </footer>
+
+</body>
+</html>
